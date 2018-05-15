@@ -8,3 +8,5 @@ To run :
 
 npm install
 npm run start
+
+![Alt text](README.PNG)
