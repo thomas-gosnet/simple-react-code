@@ -1,5 +1,7 @@
 {
-  "name": "unicorn-game",
+  "name": "simple-react-code",
+  "author": "Thomas Gosnet",
+  "licence": "MIT"
   "version": "0.1.0",
   "private": true,
   "dependencies": {
