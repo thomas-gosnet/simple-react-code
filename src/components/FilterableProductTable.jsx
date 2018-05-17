@@ -39,7 +39,7 @@ class ProductTable extends Component {
     const rows = []
     let lastCategory = null
 
-    this.props.products.forEach((product) => {
+    this.props.products.map((product) => {
       if (product.name.indexOf(filterText) === -1) {
         return
       }

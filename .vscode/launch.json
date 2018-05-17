@@ -1,19 +1,70 @@
 {
-    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
-    // Pointez pour afficher la description des attributs existants.
-    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Chrome",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost:3032",
-            "webRoot": "${workspaceRoot}/src",
-            // "userDataDir": "${workspaceRoot}/.chrome",
-            "sourceMapPathOverrides": {
-                "webpack:///./src/*": "${webRoot}/*"
-            }
-        }
-    ]
+  // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+  // Pointez pour afficher la description des attributs existants.
+  // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3032",
+      "webRoot": "${workspaceRoot}/src",
+      // "userDataDir": "${workspaceRoot}/.chrome",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*"
+      }
+      // },
+      // {
+      //     "type": "node",
+      //     "request": "launch",
+      //     "name": "Launch via NPM",
+      //     "runtimeExecutable": "npm",
+      //     "cwd": "${workspaceRoot}/node_modules/.bin/webpack-dev-server",
+      //     "runtimeArgs": [
+      //         "run-script",
+      //         "start"
+      //     ],
+      //     "port": 9229            
+      // },
+      // {
+      //     "type": "node",
+      //     "request": "launch",
+      //     "name": "Launch Program",
+      //     "program": "${workspaceRoot}/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      //     "runtimeExecutable": "npm",
+      //     "runtimeArgs": [
+      //         "npm run start"
+      //     ],
+      //     "args": [
+      //         "--open"
+      //     ],
+      //     "port": 9229
+      // },
+      // {
+      //     "name": "Launch",
+      //     "type": "node",
+      //     "request": "launch",
+      //     "program": "${workspaceRoot}/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      //     "args": [
+      //         "-d",
+      //         "--open",
+      //         "--config",
+      //         "webpack.dev.babel.js"
+      //     ],
+      //     "outFiles": [
+      //         "webpack:///src/*"
+      //     ],
+      //     "stopOnEntry": false,
+      //     "cwd": "${workspaceRoot}",
+      //     "runtimeExecutable": null,
+      //     "runtimeArgs": [],
+      //     "env": {
+      //         "NODE_ENV": "development"
+      //     },
+      //     "console": "internalConsole",
+      //     "sourceMaps": true,
+      // },
+    }
+  ]
 }

@@ -13,44 +13,45 @@ const Right = styled.div`
   text-align: left;
   .react-codemirror2, .CodeMirror{
     height: auto;
-    max-width: 98%
+    max-width: 98%;
   } 
 `
+
+const codeMirrorOptions = {
+  mode: 'jsx',
+  theme: 'material',
+  lineNumbers: true,
+}
+
+function getContent(selected) {
+  return axios.get(`https://raw.githubusercontent.com/thomas-gosnet/simple-react-code/master/src/components/${selected}.jsx`)
+    .then(({ data } = fetch.data) => data)
+}
 
 export default class RenderJsx extends Component {
   constructor(props) {
     super(props)
-    this.state = { fetch: '' }
+    this.state = { data: '' }
   }
 
   componentDidMount() {
-    return axios.get(`https://raw.githubusercontent.com/thomas-gosnet/simple-react-code/master/src/components/${this.props.selected}.jsx`)
-      .then(fetch => {
-        this.setState({ fetch: fetch.data })
-      })
+    getContent(this.props.selected)
+      .then(data => this.setState({ data }))
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selected !== this.props.selected) {
-      return axios.get(`https://raw.githubusercontent.com/thomas-gosnet/simple-react-code/master/src/components/${nextProps.selected}.jsx`)
-        .then(fetch => {
-          this.setState({ fetch: fetch.data })
-        })
+      getContent(nextProps.selected)
+        .then(data => this.setState({ data }))
     }
   }
 
   componentWillUnmount() { }
 
   render() {
-    const options = {
-      mode: 'jsx',
-      theme: 'material',
-      lineNumbers: true,
-    }
-
     return (
       <Right>
-        <CodeMirror value={this.state.fetch} options={options} />
+        <CodeMirror value={this.state.data} options={codeMirrorOptions} />
       </Right>
     )
   }
