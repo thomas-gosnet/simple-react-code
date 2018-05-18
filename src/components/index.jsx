@@ -15,6 +15,7 @@ import Calculator from './Calculator'
 import CalculatorTemp from './CalculatorTemp'
 import FilterableProductTable from './FilterableProductTable'
 import LoginControl from './LoginControl'
+import SignUpDialog from './SignUpDialog'
 
 const comment = {
   date: new Date(),
@@ -67,6 +68,7 @@ const infosComponents = {
   NumberList: () => <NumberList numbers={numbers} />,
   Blog: () => <Blog posts={posts} />,
   Reservation: () => <Reservation />,
+  SignUpDialog: () => <SignUpDialog />,
 }
 
 export default infosComponents
